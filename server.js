@@ -5,6 +5,13 @@ const colors = require('colors');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
 const cors = require('cors');
+const corsOpts = {
+  origin: 'https://expensetracker-h3bm.onrender.com/',
+  credentials: true,
+  methods: ['GET', 'POST', 'HEAD', 'PUT', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type'],
+  exposedHeaders: ['Content-Type'],
+};
 
 dotenv.config({ path: './config/config.env' });
 
@@ -20,7 +27,7 @@ if (process.env.NODE_ENV == 'development') {
   app.use(morgan('dev'));
 }
 
-app.use(cors());
+app.use(cors(corsOpts));
 
 app.use('/api/v1/transactions', transactions);
 
