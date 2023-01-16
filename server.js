@@ -27,13 +27,13 @@ const transactions = require('./routes/transactions');
 
 const app = express();
 
+app.use(cors(corsOpts));
+
 app.use(express.json());
 
 if (process.env.NODE_ENV == 'development') {
   app.use(morgan('dev'));
 }
-
-app.use(cors(corsOpts));
 
 app.use('/api/v1/transactions', transactions);
 
