@@ -8,7 +8,7 @@ const cors = require('cors');
 const corsOpts = {
   origin:
     process.env.NODE_ENV === 'production'
-      ? 'https://expensetracker-h3bm.onrender.com/'
+      ? 'https://expensetracker-h3bm.onrender.com'
       : 'http://localhost:3000',
   credentials: true,
   methods: ['GET', 'POST', 'HEAD', 'PUT', 'PATCH', 'DELETE'],
