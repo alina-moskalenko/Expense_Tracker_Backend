@@ -8,11 +8,14 @@ const cors = require('cors');
 const corsOpts = {
   origin:
     process.env.NODE_ENV === 'production'
-      ? 'https://expensetracker-api-ohma.onrender.com'
-      : 'http://localhost:5000',
+      ? 'https://expensetracker-h3bm.onrender.com'
+      : 'http://localhost:3000',
   credentials: true,
   methods: ['GET', 'POST', 'HEAD', 'PUT', 'PATCH', 'DELETE'],
-  allowedHeaders: ['Content-Type'],
+  allowedHeaders: [
+    'Access-Control-Allow-Headers',
+    'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
+  ],
   exposedHeaders: ['Content-Type'],
 };
 
