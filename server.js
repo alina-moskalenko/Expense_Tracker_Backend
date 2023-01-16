@@ -10,7 +10,7 @@ const corsOpts = {
     process.env.NODE_ENV === 'production'
       ? 'https://expensetracker-h3bm.onrender.com'
       : 'http://localhost:3000',
-  credentials: true,
+  // credentials: true,
   methods: ['GET', 'POST', 'HEAD', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: [
     'Access-Control-Allow-Headers',
