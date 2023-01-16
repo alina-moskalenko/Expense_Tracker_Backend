@@ -6,7 +6,10 @@ const morgan = require('morgan');
 const connectDB = require('./config/db');
 const cors = require('cors');
 const corsOpts = {
-  origin: 'https://expensetracker-h3bm.onrender.com/',
+  origin:
+    process.env.NODE_ENV === 'production'
+      ? 'https://expensetracker-h3bm.onrender.com/'
+      : 'http://localhost:3000',
   credentials: true,
   methods: ['GET', 'POST', 'HEAD', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type'],
